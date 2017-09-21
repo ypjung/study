@@ -120,6 +120,7 @@ int main(int argc, char *argv[]) {
 }
 
 
+
 void finish_with_error(MYSQL *conn) {
 
   fprintf(stderr, "%s\n", mysql_error(con));
