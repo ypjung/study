@@ -22,7 +22,8 @@ int main(int argc, char *argv[]) {
     exit(1);
   }  
 
-  if(mysql_real_connect(con, HOST, USER, PASSWD, DB_NAME, NULL, 0, NULL) == NULL) {
+  if(mysql_real_connect(con, HOST, USER, PASSWD,
+                        DB_NAME, NULL, 0, CLIENT_MULTI_STATEMENTS) == NULL) {
     finish_with_error(con);
   }
 
@@ -40,11 +41,9 @@ int main(int argc, char *argv[]) {
     }
   
     MYSQL_ROW row = mysql_fetch_row(result);
-
     printf("%s\n", row[0]);
 
     mysql_free_result(result);
-  
     status = mysql_next_result(con);
 
     if(status > 0) {
