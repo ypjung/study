@@ -27,7 +27,7 @@ int main(int argc, char *argv) {
     finish_with_error(con);
   }
 
-  char *sql = "create table writers(Id INT PRIMARY KEY AUTO_INCREMENT, Name TEXT);
+  char *sql = "CREATE TABLE Writers(Id INT PRIMARY KEY AUTO_INCREMENT, Name TEXT);
 
   if(mysql_query(con, sql)) {
     finish_with_error(con);

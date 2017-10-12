@@ -85,7 +85,7 @@ int main(int argc, char *argv[]) {
   exit(-1);
   }
 
-  r = flose(fp);
+  r = fclose(fp);
 
   handler_error(r);
 
@@ -103,7 +103,7 @@ int main(int argc, char *argv[]) {
     finish_with_error(con);
   }
 
-  mysql_real_excape_string(con, chunk, data, size);
+  mysql_real_escape_string(con, chunk, data, size);
 
   st = "INSERT INTO Images(Id, Data) VALUES(1, '%s')";
   st_len = strlen(st);
